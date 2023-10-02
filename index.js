@@ -6,10 +6,11 @@ function key_pressed(event, item) {
 }
 
 function test(event, item) {
-    alert('You pressed the button!');
-}
-
-function getTranslations() {
+    document.getElementById("q").innerHTML = "1";
     const fs = require('fs')
-    fs.readFile("nouns_en-fi.txt")
+    document.getElementById("q").innerHTML = "2";
+    fs.readFile("nouns_en-fi.txt", (err, inputD) => {
+        if (err) throw err;
+        document.getElementById("q").innerHTML = inputD.toString();
+    })
 }
