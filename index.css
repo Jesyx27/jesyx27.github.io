@@ -1,28 +1,192 @@
-div {
-    padding: 1px;
+/*
+	@name web_1920___1
+*/
+/* Only edit this if you know what you are doing! */
+body { margin: 0px; padding: 0px; font-family:"Arial"; overflow-x:hidden; }
+
+/* Only edit this if you know what you are doing! */
+img { position: absolute; display: block; margin: 0px; border: none; padding: 0px; }
+
+/* Only edit this if you know what you are doing! */
+div { position: absolute; }
+
+#content-container { display: table; position: relative; width: 1920px; width: 1920px; height: 1080px; overflow: hidden; display: block;  margin-left: auto; margin-right: auto;  }
+
+#_bg__web_1920___1 {
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+	background:rgba(255,255,255,255);
 }
 
-body {
-	background-image: url("https://www.whitehouse.gov/wp-content/uploads/2021/04/P20210303AS-1901-cropped.jpg?w=1536");
+
+#rectangle_1 {
+	top: 0px;
+	left: 0px;
+	width: 1922px;
+	height: 144px;
+	border: 1px solid #707070;
+	background:rgba(255,145,0,255);
 }
 
-div.head {
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: lightblue;
+#group_1 {
+	top: 77px;
+	left: 382px;
+	width: 221px;
+	height: 56px;
 }
 
-div.work_area {
-    text-align: center;
+#rectangle_2 {
+	top: 0px;
+	left: 0px;
+	width: 221px;
+	height: 56px;
+	background:rgba(0,0,0,255);
 }
 
-label.question {
-    font-size: 32;
-    font-family: Arial, Helvetica, sans-serif;
+
+#fart {
+	top: 8px;
+	left: 83px;
+	width: 75px;
+	height: 61px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: left;
+	color:#ffffff;
 }
 
-input.answer {
-    font-size: 32;
-    font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
+#group_2 {
+	top: 77px;
+	left: 644px;
+	width: 221px;
+	height: 56px;
 }
+
+#rectangle_2_ek1 {
+	top: 0px;
+	left: 0px;
+	width: 221px;
+	height: 56px;
+	background:rgba(0,0,0,255);
+}
+
+
+#kanaal {
+	top: 8px;
+	left: 63px;
+	width: 115px;
+	height: 61px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: left;
+	color:#ffffff;
+}
+
+
+#jesyx {
+	top: 11px;
+	left: 36px;
+	width: 308px;
+	height: 183px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 90px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+
+#rectangle_3 {
+	top: 142px;
+	left: 0px;
+	width: 1920px;
+	height: 938px;
+	background:rgba(57,57,57,255);
+}
+
+
+#line_1 {
+	top: 416px;
+	left: 0.5px;
+	width: 1920px;
+	height: 1px;
+}
+
+#group_3 {
+	top: 15%;
+	left: 25%;
+	right: 25%;
+	bottom: 10%;
+}
+
+#rectangle_4 {
+	top: 14px;
+	left: 0px;
+	width: 796px;
+	height: 212px;
+	border: 1px solid #707070;
+	background:rgba(255,145,0,255);
+	
+}
+
+
+#random {
+	top: 0px;
+	left: 8%;
+	top: 0%;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 165px;
+	text-align: justify;
+	font-weight: bold;
+	color:#ffffff;
+}
+
+
+#rectangle_26 {
+	top: 585px;
+	left: 1267px;
+	width: 562px;
+	height: 317px;
+	border: 2px solid #707070;
+	background:rgba(255,255,255,0);
+}
+
+
+#rectangle_27 {
+	top: 585px;
+	left: 650px;
+	width: 562px;
+	height: 317px;
+	border: 2px solid #707070;
+	background:rgba(255,255,255,0);
+}
+
+
+#rectangle_25 {
+	top: 585px;
+	left: 43px;
+	width: 562px;
+	height: 317px;
+	border: 2px solid #707070;
+	background:rgba(112,112,122,255);
+}
+
+
+#_image_1 {
+	top: 585px;
+	left: 165px;
+	width: 312px;
+	height: 312px;
+}
+
+
+
+/* Add your custom CSS here */

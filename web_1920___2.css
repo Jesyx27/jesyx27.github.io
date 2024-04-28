@@ -1,0 +1,510 @@
+/*
+	@name web_1920___2
+*/
+/* Only edit this if you know what you are doing! */
+body { margin: 0px; padding: 0px; font-family:"Arial"; overflow-x:hidden; }
+
+/* Only edit this if you know what you are doing! */
+img { position: absolute; display: block; margin: 0px; border: none; padding: 0px; }
+
+/* Only edit this if you know what you are doing! */
+div { position: absolute; }
+
+#content-container { display: table; position: relative; width: 1920px; width: 1920px; height: 1080px; overflow: hidden; display: block;  margin-left: auto; margin-right: auto;  }
+
+#_bg__web_1920___2 {
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+	background:rgba(255,255,255,255);
+}
+
+
+#rectangle_1 {
+	top: 0px;
+	left: 0px;
+	width: 1922px;
+	height: 144px;
+	border: 1px solid #707070;
+	background:rgba(255,145,0,255);
+}
+
+
+#_jesyx {
+	top: 11px;
+	left: 36px;
+	width: 308px;
+	height: 183px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 90px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+
+#rectangle_3 {
+	top: 142px;
+	left: 0px;
+	width: 1920px;
+	height: 938px;
+	background:rgba(57,57,57,255);
+}
+
+
+#rectangle_5 {
+	top: 230px;
+	left: 130px;
+	width: 338px;
+	height: 122px;
+	border: 1px solid #707070;
+	background:rgba(255,162,0,255);
+}
+
+
+#januari {
+	top: 246px;
+	left: 187px;
+	width: 260px;
+	height: 131.5px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 65px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+
+#rectangle_5_ek1 {
+	top: 230px;
+	left: 533px;
+	width: 338px;
+	height: 122px;
+	border: 1px solid #707070;
+	background:rgba(255,162,0,255);
+}
+
+
+#februari {
+	top: 246px;
+	left: 574px;
+	width: 292px;
+	height: 131.5px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 65px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+
+#rectangle_5_ek2 {
+	top: 230px;
+	left: 936px;
+	width: 338px;
+	height: 122px;
+	border: 1px solid #707070;
+	background:rgba(255,162,0,255);
+}
+
+
+#maart {
+	top: 246px;
+	left: 1012px;
+	width: 223px;
+	height: 131.5px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 65px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+
+#rectangle_5_ek3 {
+	top: 230px;
+	left: 1339px;
+	width: 338px;
+	height: 122px;
+	border: 1px solid #707070;
+	background:rgba(255,162,0,255);
+}
+
+
+#april {
+	top: 246px;
+	left: 1433px;
+	width: 187px;
+	height: 131.5px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 65px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+#group_24 {
+	top: 438px;
+	left: 130px;
+	width: 336px;
+	height: 120px;
+}
+
+#rectangle_5_ek4 {
+	top: 0px;
+	left: 0px;
+	width: 338px;
+	height: 122px;
+	border: 1px solid #707070;
+	background:rgba(255,162,0,255);
+}
+
+
+#mei {
+	top: 16px;
+	left: 115px;
+	width: 154px;
+	height: 131.5px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 65px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+#group_23 {
+	top: 438px;
+	left: 533px;
+	width: 336px;
+	height: 120px;
+}
+
+#rectangle_5_ek5 {
+	top: 0px;
+	left: 0px;
+	width: 338px;
+	height: 122px;
+	border: 1px solid #707070;
+	background:rgba(255,162,0,255);
+}
+
+
+#juni {
+	top: 16px;
+	left: 105px;
+	width: 164px;
+	height: 131.5px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 65px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+#group_22 {
+	top: 438px;
+	left: 936px;
+	width: 336px;
+	height: 120px;
+}
+
+#rectangle_5_ek6 {
+	top: 0px;
+	left: 0px;
+	width: 338px;
+	height: 122px;
+	border: 1px solid #707070;
+	background:rgba(255,162,0,255);
+}
+
+
+#juli {
+	top: 16px;
+	left: 116px;
+	width: 143px;
+	height: 131.5px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 65px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+#group_12 {
+	top: 438px;
+	left: 1339px;
+	width: 336px;
+	height: 120px;
+}
+
+#rectangle_5_ek7 {
+	top: 0px;
+	left: 0px;
+	width: 338px;
+	height: 122px;
+	border: 1px solid #707070;
+	background:rgba(255,162,0,255);
+}
+
+
+#augustus {
+	top: 16px;
+	left: 25px;
+	width: 324px;
+	height: 131.5px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 65px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+#group_13 {
+	top: 646px;
+	left: 130px;
+	width: 336px;
+	height: 120px;
+}
+
+#rectangle_5_ek8 {
+	top: 0px;
+	left: 0px;
+	width: 338px;
+	height: 122px;
+	border: 1px solid #707070;
+	background:rgba(255,162,0,255);
+}
+
+
+#januari_ek1 {
+	top: 0px;
+	left: 15px;
+	width: 357px;
+	height: 183px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 90px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+#group_14 {
+	top: 646px;
+	left: 130px;
+	width: 336px;
+	height: 120px;
+}
+
+#rectangle_5_ek9 {
+	top: 0px;
+	left: 0px;
+	width: 338px;
+	height: 122px;
+	border: 1px solid #707070;
+	background:rgba(255,162,0,255);
+}
+
+
+#september {
+	top: 17px;
+	left: 0px;
+	width: 371px;
+	height: 131.5px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 65px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+#group_15 {
+	top: 646px;
+	left: 533px;
+	width: 336px;
+	height: 120px;
+}
+
+#rectangle_5_ek10 {
+	top: 0px;
+	left: 0px;
+	width: 338px;
+	height: 122px;
+	border: 1px solid #707070;
+	background:rgba(255,162,0,255);
+}
+
+
+#oktober {
+	top: 17px;
+	left: 43px;
+	width: 289px;
+	height: 131.5px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 65px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+#group_16 {
+	top: 646px;
+	left: 936px;
+	width: 336px;
+	height: 120px;
+}
+
+#rectangle_5_ek11 {
+	top: 0px;
+	left: 0px;
+	width: 338px;
+	height: 122px;
+	border: 1px solid #707070;
+	background:rgba(255,162,0,255);
+}
+
+
+#november {
+	top: 17px;
+	left: 7px;
+	width: 360px;
+	height: 131.5px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 65px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+#group_17 {
+	top: 646px;
+	left: 1339px;
+	width: 336px;
+	height: 120px;
+}
+
+#rectangle_5_ek12 {
+	top: 0px;
+	left: 0px;
+	width: 338px;
+	height: 122px;
+	border: 1px solid #707070;
+	background:rgba(255,162,0,255);
+}
+
+
+#december {
+	top: 17px;
+	left: 13px;
+	width: 348px;
+	height: 131.5px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 65px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+#group_26 {
+	top: 448.08270263672px;
+	left: 336.28344726562px;
+	width: 1120.5627441406px;
+	height: 303.40911865234px;
+}
+
+#rectangle_23 {
+	top: 0px;
+	left: 0px;
+	width: 1120.5620117188px;
+	height: 303.40853881836px;
+	background:rgba(246,220,0,255);
+}
+
+
+#path_7 {
+	top: 25px;
+	left: 13px;
+	width: 394.55078125px;
+	height: 278.0556640625px;
+}
+
+
+#path_8 {
+	top: 151px;
+	left: 4px;
+	width: 152.74145507812px;
+	height: 152.74151611328px;
+}
+
+
+#path_9 {
+	top: 15px;
+	left: 283px;
+	width: 394.55102539062px;
+	height: 278.0556640625px;
+}
+
+
+#path_10 {
+	top: 7px;
+	left: 534px;
+	width: 394.55102539062px;
+	height: 278.05569458008px;
+}
+
+
+#path_11 {
+	top: 0px;
+	left: 785px;
+	width: 335.90283203125px;
+	height: 276.00759887695px;
+}
+
+
+#path_12 {
+	top: 0px;
+	left: 1035px;
+	width: 78.53955078125px;
+	height: 78.539825439453px;
+}
+
+
+#rectangle_24 {
+	top: 86px;
+	left: 152px;
+	width: 817.2861328125px;
+	height: 130.75592041016px;
+	background:rgba(22,22,21,255);
+}
+
+
+#under_construction {
+	top: 94px;
+	left: 172px;
+	width: 830.63208007812px;
+	height: 178.59753417969px;
+	overflow: hidden;
+	font-family: MyriadPro-Bold;
+	font-size: 89px;
+	text-align: left;
+	line-height: 106px;
+	color:#ffffff;
+}
+
+
+
+/* Add your custom CSS here */

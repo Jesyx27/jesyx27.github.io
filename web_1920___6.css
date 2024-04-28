@@ -1,0 +1,143 @@
+/*
+	@name web_1920___6
+*/
+/* Only edit this if you know what you are doing! */
+body { margin: 0px; padding: 0px; font-family:"Arial"; overflow-x:hidden; }
+
+/* Only edit this if you know what you are doing! */
+img { position: absolute; display: block; margin: 0px; border: none; padding: 0px; }
+
+/* Only edit this if you know what you are doing! */
+div { position: absolute; }
+
+#content-container { display: table; position: relative; width: 1920px; width: 1920px; height: 1080px; overflow: hidden; display: block;  margin-left: auto; margin-right: auto;  }
+
+#_bg__web_1920___6 {
+	top: 0px;
+	left: 0px;
+	width: 1920px;
+	height: 1080px;
+	background:rgba(255,255,255,255);
+}
+
+
+#rectangle_1 {
+	top: 0px;
+	left: 0px;
+	width: 1922px;
+	height: 144px;
+	border: 1px solid #707070;
+	background:rgba(255,145,0,255);
+}
+
+
+#_jesyx {
+	top: 11px;
+	left: 36px;
+	width: 308px;
+	height: 183px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 90px;
+	font-weight: bold;
+	text-align: left;
+	color:#000000;
+}
+
+
+#rectangle_3 {
+	top: 142px;
+	left: 0px;
+	width: 1920px;
+	height: 938px;
+	background:rgba(57,57,57,255);
+}
+
+
+#patat_proefdier {
+	top: 720px;
+	left: 60px;
+	width: 434px;
+	height: 276px;
+}
+
+
+#patat_koningsdag {
+	top: 720px;
+	left: 519px;
+	width: 434px;
+	height: 276px;
+}
+
+
+#patat_parkinson {
+	top: 406px;
+	left: 519px;
+	width: 434px;
+	height: 276px;
+}
+
+
+#patat_fietshelm {
+	top: 406px;
+	left: 978px;
+	width: 434px;
+	height: 276px;
+}
+
+
+#pixel {
+	top: 406px;
+	left: 1437px;
+	width: 434px;
+	height: 276px;
+}
+
+
+#patat_tafeltennis {
+	top: 406px;
+	left: 60px;
+	width: 434px;
+	height: 276px;
+}
+
+
+#rectangle_21 {
+	top: 189px;
+	left: 60px;
+	width: 625px;
+	height: 113px;
+	background:rgba(154,0,255,255);
+}
+
+
+#terug_naar_overzicht {
+	top: 206px;
+	left: 79px;
+	width: 622px;
+	height: 122px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 60px;
+	font-weight: bold;
+	text-align: left;
+	color:#ffffff;
+}
+
+
+#april {
+	top: 180px;
+	left: 1317px;
+	width: 282px;
+	height: 201.5px;
+	overflow: hidden;
+	font-family: Segoe UI;
+	font-size: 99px;
+	font-weight: bold;
+	text-align: left;
+	color:#ffffff;
+}
+
+
+
+/* Add your custom CSS here */
