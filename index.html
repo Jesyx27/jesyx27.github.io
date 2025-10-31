@@ -54,13 +54,14 @@
     <div class="title">A‑Frame Webviewer — sjabloon (lege scène)</div>
   </div>
 
-  <a-scene>
+  <a-scene fog="type: linear; color: #100; near: 10; far: 1000" background="color: #67a">
+    <a-entity camera look-controls wasd-controls="acceleration: 1000" position="0 50 0"></a-entity>
     <a-assets>
-      <a-asset-item id="obj" src="https://raw.githubusercontent.com/Jesyx27/jesyx27.github.io/refs/heads/bim/assets/models/monka/monka.obj"></a-asset-item> 
-      <a-asset-item id="mtl" src="https://raw.githubusercontent.com/Jesyx27/jesyx27.github.io/refs/heads/bim/assets/models/monka/monka.mtl"></a-asset-item> 
+      <a-asset-item id="obj" src="assets/models/usp/Collada-RD-139900_455000.obj"></a-asset-item>
+      <a-asset-item id="mtl" src="assets/models/usp/Collada-RD-139900_455000.mtl"></a-asset-item>
     </a-assets>
 
-    <a-entity obj-model="obj: #obj; mtl: #mtl"></a-entity>
+    <a-entity obj-model="obj: #obj; mtl: #mtl" rotation="-90 0 0" position="0 0 0"></a-entity>
   </a-scene>
 
 </body>
