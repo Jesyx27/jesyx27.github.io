@@ -56,6 +56,7 @@
 
   <a-scene fog="type: linear; color: #100; near: 10; far: 1000" background="color: #67a">
     <a-entity camera look-controls wasd-controls="acceleration: 1000" position="0 50 0"></a-entity>
+    <a-light type="directional" light="castShadow:true;" position="100 100 100" intensity="5" shadow-camera-automatic="#objects"></a-light>
     <a-assets>
       <a-asset-item id="obj" src="assets/models/usp/Collada-RD-139900_455000.obj"></a-asset-item>
       <a-asset-item id="mtl" src="assets/models/usp/Collada-RD-139900_455000.mtl"></a-asset-item>
