@@ -6,6 +6,13 @@
   <title>A‑Frame Webviewer — sjabloon</title>
   <!-- A-Frame CDN -->
   <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+
+  <!-- Scripts van https://github.com/mwbeene/aframe-hdr-environment-map/tree/main -->
+  <script src="lib/RGBELoader.js"></script>
+
+  <script src="components/aframe-env-map-component.js"></script>
+  <script src="components/aframe-hdr-environment.js"></script>
+
   <!-- Optioneel: extra componenten kunnen hier toegevoegd worden -->
   <style>
     /* Basisstijl zodat de canvas vol scherm gebruikt */
@@ -49,20 +56,21 @@
 </head>
 <body>
 
-  <!-- Optionele UI: laat dit weg of bewaar als referentie -->
   <div class="topbar">
-    <div class="title">A‑Frame Webviewer — sjabloon (lege scène)</div>
+    <div class="title">Utrecht Science Park met Oblisk - Jesse Ceulemans</div>
   </div>
 
-  <a-scene fog="type: linear; color: #100; near: 10; far: 1000" background="color: #67a">
-    <a-entity camera look-controls wasd-controls="acceleration: 1000" position="0 50 0"></a-entity>
-    <a-light type="directional" light="castShadow:true;" position="100 100 100" intensity="5" shadow-camera-automatic="#objects"></a-light>
+  <a-scene light="defaultLightsEnabled: true" hdr-environment="url: assets/hdris/citrus_orchard_road_puresky_4k.hdr; showBackground: true; showGround: true; groundSize: 1000" environment="preset: forest; groundColor: #445451; skyColor: #889998; fog: 0.5; horizonColor: #667777; groundTexture: walkernoise; groundTextureRepeat: 200 200; groundTextureScale: 4">
+    <a-entity camera look-controls wasd-controls="acceleration: 1000" position="-30 40 100"></a-entity>
     <a-assets>
-      <a-asset-item id="obj" src="assets/models/usp/Collada-RD-139900_455000.obj"></a-asset-item>
-      <a-asset-item id="mtl" src="assets/models/usp/Collada-RD-139900_455000.mtl"></a-asset-item>
+      <a-asset-item id="obj_usp" src="assets/models/usp/Collada-RD-139900_455000.obj"></a-asset-item>
+      <a-asset-item id="mtl_usp" src="assets/models/usp/Collada-RD-139900_455000.mtl"></a-asset-item>
+      <a-asset-item id="obj_oblisk" src="assets/models/oblisk/oblisk.obj"></a-asset-item>
+      <a-asset-item id="mtl_oblisk" src="assets/models/oblisk/oblisk.mtl"></a-asset-item>
     </a-assets>
 
-    <a-entity obj-model="obj: #obj; mtl: #mtl" rotation="-90 0 0" position="0 0 0"></a-entity>
+    <a-entity obj-model="obj: #obj_usp; mtl: #mtl_usp" rotation="-90 0 0" position="-200 20 100"></a-entity>
+    <a-entity obj-model="obj: #obj_oblisk; mtl: #mtl_oblisk" rotation="0 0 0" position="-18 25 45" scale="2 2 2"></a-entity>
   </a-scene>
 
 </body>
