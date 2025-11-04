@@ -60,7 +60,7 @@
     <div class="title">Utrecht Science Park met Oblisk - Jesse Ceulemans</div>
   </div>
 
-  <a-scene light="defaultLightsEnabled: true" hdr-environment="url: assets/hdris/citrus_orchard_road_puresky_4k.hdr; showBackground: true; showGround: true; groundSize: 1000" environment="preset: forest; groundColor: #445451; skyColor: #889998; fog: 0.5; horizonColor: #667777; groundTexture: walkernoise; groundTextureRepeat: 200 200; groundTextureScale: 4">
+  <a-scene id="scene" light="defaultLightsEnabled: true" hdr-environment="url: assets/hdris/sunflowers_puresky_4k.hdr; showBackground: true; showGround: true; groundSize: 1000">
     <a-entity camera look-controls wasd-controls="acceleration: 1000" position="-30 40 100"></a-entity>
     <a-assets>
       <a-asset-item id="obj_usp" src="assets/models/usp/Collada-RD-139900_455000.obj"></a-asset-item>
@@ -70,7 +70,7 @@
     </a-assets>
 
     <a-entity obj-model="obj: #obj_usp; mtl: #mtl_usp" rotation="-90 0 0" position="-200 20 100"></a-entity>
-    <a-entity obj-model="obj: #obj_oblisk; mtl: #mtl_oblisk" rotation="0 0 0" position="-18 25 45" scale="2 2 2"></a-entity>
+    <a-entity id="oblisk" obj-model="obj: #obj_oblisk; mtl: #mtl_oblisk" rotation="0 0 0" position="-18 25 45" scale="2 2 2"></a-entity>
   </a-scene>
 
 </body>
