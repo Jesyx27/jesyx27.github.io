@@ -1,6 +1,10 @@
 # BIM Webviewer Demo 
 This is a demonstration for a college assignment. Here are the sources of the external media used in the project, all of which have a license which allows either educational or personal use.
 
+## Demo
+View demonstration [here](https://jesyx27.github.io)
+![Splash](image_2025-11-06_161826574.png)
+
 ## Sources
 ### [lib/*](lib/):
 - [Mike Beene](https://github.com/mike-beene)
@@ -28,5 +32,5 @@ This is a demonstration for a college assignment. Here are the sources of the ex
   - [syferfontein_0d_clear_puresky_4k.hdr](assets/hdris/syferfontein_0d_clear_puresky_4k.hdr)
     - Greg Zaal & Jarod Guest
     - https://polyhaven.com/a/syferfontein_0d_clear_puresky
-- [models/usp/*]
+- [models/usp/*](assets/models/usp/)
   - Gemeente Utrecht ([Utrecht3D](https://3d.utrecht.nl/app#140135.54,454809.62,561.76,59.96,359.63,0.00))
