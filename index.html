@@ -23,6 +23,43 @@
       background: #111; /* valt weg zodra de a-scene geladen is */
     }
 
+    .ui {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+      color: white;
+      font-size: 14px;
+    }
+
+    button {
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      margin: 4px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background: rgba(255,255,255,0.3);
+      color: black;
+      animation: button-hover 0.2s ease-in-out;
+    }
+    button:active {
+      background: rgba(255,255,255,0.5);
+      color: gray;
+      animation: button-active 0.2s ease-in-out;
+    }
+
+    /* Animaties voor knoppen */
+    @keyframes button-hover {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
+
     /* Kleine UI-balk bovenin (optioneel) */
     .topbar {
       position: absolute;
@@ -56,22 +93,75 @@
 </head>
 <body>
 
+
   <div class="topbar">
     <div class="title">Utrecht Science Park met Oblisk - Jesse Ceulemans</div>
   </div>
 
-  <a-scene id="scene" light="defaultLightsEnabled: true" hdr-environment="url: assets/hdris/sunflowers_puresky_4k.hdr; showBackground: true; showGround: true; groundSize: 1000">
-    <a-entity camera look-controls wasd-controls="acceleration: 1000" position="-30 40 100"></a-entity>
+  <ui class="ui">
+    <!-- Optionele UI-elementen kunnen hier geplaatst worden -->
+    <button onclick="change_hdri()">Andere Lucht</button>
+    <button onclick="toggle_model()">Model Weergeven/Verbergen</button>
+  </ui>
+
+  <a-scene id="scene" light="defaultLightsEnabled: false" hdr-environment="url: assets\hdris\citrus_orchard_road_puresky_4k.hdr; showBackground: true; showGround: true; groundSize: 1000" renderer="physicallyCorrectLights: true; colorManagement: true; shadowMap.enabled: true; shadowMap.type: pcfSoft"  >
+    <a-entity camera look-controls wasd-controls="acceleration: 1000" position="-30 140 100"></a-entity>
     <a-assets>
       <a-asset-item id="obj_usp" src="assets/models/usp/Collada-RD-139900_455000.obj"></a-asset-item>
       <a-asset-item id="mtl_usp" src="assets/models/usp/Collada-RD-139900_455000.mtl"></a-asset-item>
-      <a-asset-item id="obj_oblisk" src="assets/models/oblisk/oblisk.obj"></a-asset-item>
-      <a-asset-item id="mtl_oblisk" src="assets/models/oblisk/oblisk.mtl"></a-asset-item>
+
+      <a-asset-item id="glb_usp" src="assets/models/usp/usp.glb" shadow="cast: true; receive: true"></a-asset-item>
+      <a-asset-item id="glb_oblisk" src="assets/models/oblisk/oblisk.glb" shadow="cast: true; receive: true"  ></a-asset-item>
     </a-assets>
 
-    <a-entity obj-model="obj: #obj_usp; mtl: #mtl_usp" rotation="-90 0 0" position="-200 20 100"></a-entity>
-    <a-entity id="oblisk" obj-model="obj: #obj_oblisk; mtl: #mtl_oblisk" rotation="0 0 0" position="-18 25 45" scale="2 2 2"></a-entity>
+    <a-entity gltf-model="#glb_usp" rotation="-90 0 0" position="-200 120 100"></a-entity>
+    <a-entity id="oblisk" gltf-model="#glb_oblisk" rotation="0 0 0" position="-18 125 45" scale="2 2 2"></a-entity>
   </a-scene>
 
 </body>
 </html>
+<script>
+  var skyboxIndex = 0;
+  var skyboxID = 'hdr-environment';
+  var skyboxSuffix = '; showBackground: true; showGround: true; groundSize: 1000';
+  var skyboxPrefix = 'url: ';
+  var skyboxes = [
+      'assets/hdris/citrus_orchard_road_puresky_4k.hdr',
+      'assets/hdris/belfast_sunset_puresky_4k.hdr',
+      'assets/hdris/overcast_soil_puresky_4k.hdr',
+      'assets/hdris/qwantani_night_puresky_4k.hdr',
+      'assets/hdris/sunflowers_puresky_4k.hdr',
+      'assets/hdris/syferfontein_0d_clear_puresky_4k.hdr'
+  ];
+
+  function change_hdri() {
+      let scene = document.getElementById("scene");
+
+      skyboxIndex = (skyboxIndex + 1) % skyboxes.length;
+
+      let hdr = skyboxes[skyboxIndex];
+
+      // Verwijder het component
+      scene.removeAttribute("hdr-environment");
+
+      // Force A-Frame to process the removal before re-adding
+      setTimeout(() => {
+          scene.setAttribute(
+              "hdr-environment",
+              `url: ${hdr}; showBackground: true; showGround: true; groundSize: 1000;`
+          );
+
+          console.log("HDR changed to:", hdr);
+      }, 10);
+  }
+
+  function toggle_model() {
+    let scene = document.getElementById("scene");
+
+    let oblisk = scene.querySelector("#oblisk");
+    let currentVisibility = oblisk.getAttribute("visible");
+    oblisk.setAttribute("visible", !currentVisibility);
+  }
+  
+
+</script>
