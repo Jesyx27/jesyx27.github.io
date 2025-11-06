@@ -9,7 +9,6 @@
 
   <!-- Scripts van https://github.com/mwbeene/aframe-hdr-environment-map/tree/main -->
   <script src="lib/RGBELoader.js"></script>
-
   <script src="components/aframe-env-map-component.js"></script>
   <script src="components/aframe-hdr-environment.js"></script>
 
@@ -95,7 +94,7 @@
 
 
   <div class="topbar">
-    <div class="title">Utrecht Science Park met Oblisk - Jesse Ceulemans</div>
+    <div class="title">Utrecht Science Park met Oblisk</div>
   </div>
 
   <ui class="ui">
@@ -134,14 +133,14 @@
   function change_hdri() {
       let scene = document.getElementById("scene");
 
+      // Get the index of the next image based on the current one, faster than indexing the current one
       skyboxIndex = (skyboxIndex + 1) % skyboxes.length;
 
+      // Force reset by deleting
       let hdr = skyboxes[skyboxIndex];
-
-      // Verwijder het component
       scene.removeAttribute("hdr-environment");
 
-      // Force A-Frame to process the removal before re-adding
+      // Force A-Frame to process the removal before re-adding (sleep due to black screen)
       setTimeout(() => {
           scene.setAttribute(
               "hdr-environment",
@@ -149,12 +148,13 @@
           );
 
           console.log("HDR changed to:", hdr);
-      }, 10);
+          }, 50);
   }
 
   function toggle_model() {
     let scene = document.getElementById("scene");
 
+    // Toggle visibility
     let oblisk = scene.querySelector("#oblisk");
     let currentVisibility = oblisk.getAttribute("visible");
     oblisk.setAttribute("visible", !currentVisibility);
