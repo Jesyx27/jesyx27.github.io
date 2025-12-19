@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>A‑Frame Webviewer — sjabloon</title>
+  <!-- A-Frame CDN -->
+  <script src="https://aframe.io/releases/1.7.0/aframe.min.js"></script>
+
+  <!-- Scripts van https://github.com/mwbeene/aframe-hdr-environment-map/tree/main -->
+  <script src="lib/RGBELoader.js"></script>
+
+  <script src="components/aframe-env-map-component.js"></script>
+  <script src="components/aframe-hdr-environment.js"></script>
+
+  <!-- Optioneel: extra componenten kunnen hier toegevoegd worden -->
+  <style>
+    /* Basisstijl zodat de canvas vol scherm gebruikt */
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: #111; /* valt weg zodra de a-scene geladen is */
+    }
+
+    .ui {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 10;
+      color: white;
+      font-size: 14px;
+    }
+
+    button {
+      background: rgba(0,0,0,0.5);
+      border: none;
+      color: white;
+      padding: 8px 12px;
+      margin: 4px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+    button:hover {
+      background: rgba(255,255,255,0.3);
+      color: black;
+      animation: button-hover 0.2s ease-in-out;
+    }
+    button:active {
+      background: rgba(255,255,255,0.5);
+      color: gray;
+      animation: button-active 0.2s ease-in-out;
+    }
+
+    /* Animaties voor knoppen */
+    @keyframes button-hover {
+      from { transform: scale(1); }
+      to { transform: scale(1.05); }
+    }
+
+
+    /* Kleine UI-balk bovenin (optioneel) */
+    .topbar {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      color: white;
+      pointer-events: none; /* laat klik-events door naar de scene */
+      opacity: 0.9;
+    }
+
+    .topbar .title {
+      background: rgba(0,0,0,0.5);
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      pointer-events: none;
+    }
+
+    /* Maak de A-Frame canvas en container volledig scherm */
+    a-scene {
+      width: 100%;
+      height: 100vh;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  
+  <a-scene id="scene" hdr-environment="url: assets/hdris/citrus_orchard_road_puresky_4k.hdr; showBackground: true; showGround: true; groundSize: 1000;">
+    <a-assets>
+      <!--<a-asset-item id="huidig-obj" src="assets/models/huidigesituatie/huidige_situatie_191225.obj"></a-asset-item>
+      <a-asset-item id="huidig-mtl" src="assets/models/huidigesituatie/huidige_situatie_191225.mtl"></a-asset-item>-->
+      <a-asset-item id="huidig-gltf" src="assets/models/huidigesituatie/huidige_situatie-191225.glb"></a-asset-item>
+    </a-assets>
+
+    <!-- offset of scene is +2m; char height is 1.8m-->
+    <a-camera position="-4 3.8 0" fov="90"></a-camera>
+
+    <!--<a-entity obj-model="obj: #huidig-obj; mtl: #huidig-mtl" scale="1 1 1"></a-entity>-->
+    <a-entity gltf-model="#huidig-gltf" scale="1 1 1" position="0 2 0" rotation="-90 0 0"></a-entity>
+    <a-box color="red" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>
+  </a-scene>
+  
+</body>
+</html>
+<script>
+  var skyboxIndex = 0;
+  var skyboxID = 'hdr-environment';
+  var skyboxSuffix = '; showBackground: true; showGround: true; groundSize: 1000';
+  var skyboxPrefix = 'url: ';
+  var skyboxes = [
+      'assets/hdris/citrus_orchard_road_puresky_4k.hdr',
+      'assets/hdris/belfast_sunset_puresky_4k.hdr',
+      'assets/hdris/overcast_soil_puresky_4k.hdr',
+      'assets/hdris/qwantani_night_puresky_4k.hdr',
+      'assets/hdris/sunflowers_puresky_4k.hdr',
+      'assets/hdris/syferfontein_0d_clear_puresky_4k.hdr'
+  ];
+
+  function change_hdri() {
+      let scene = document.getElementById("scene");
+
+      skyboxIndex = (skyboxIndex + 1) % skyboxes.length;
+      let hdr = skyboxes[skyboxIndex];
+
+      // Verwijder het component
+      scene.removeAttribute("hdr-environment");
+
+      // Force A-Frame to process the removal before re-adding
+      setTimeout(() => {
+          scene.setAttribute(
+              "hdr-environment",
+              `url: ${hdr}; showBackground: true; showGround: true; groundSize: 1000;`
+          );
+
+          console.log("HDR changed to:", hdr);
+      }, 10);
+  }
+
+  function toggle_model() {
+    let scene = document.getElementById("scene");
+
+    let oblisk = scene.querySelector("#oblisk");
+    let currentVisibility = oblisk.getAttribute("visible");
+    oblisk.setAttribute("visible", !currentVisibility);
+  }
+  
+
+</script>
