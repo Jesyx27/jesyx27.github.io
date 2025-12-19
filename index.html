@@ -12,6 +12,7 @@
 
   <script src="components/aframe-env-map-component.js"></script>
   <script src="components/aframe-hdr-environment.js"></script>
+  <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
 
   <!-- Optioneel: extra componenten kunnen hier toegevoegd worden -->
   <style>
@@ -98,7 +99,8 @@
     <button onclick="toggle_model()">Model Weergeven/Verbergen</button>
   </ui>
 
-  <a-scene id="scene" hdr-environment="url: assets/hdris/citrus_orchard_road_puresky_4k.hdr; showBackground: true; showGround: true; groundSize: 1000;">
+  <!--<a-scene id="scene" hdr-environment="url: assets/hdris/citrus_orchard_road_puresky_4k.hdr; showBackground: true; showGround: true; groundSize: 1000;">-->
+  <a-scene embedded arjs>
     <a-assets>
       <!--<a-asset-item id="huidig-obj" src="assets/models/huidigesituatie/huidige_situatie_191225.obj"></a-asset-item>
       <a-asset-item id="huidig-mtl" src="assets/models/huidigesituatie/huidige_situatie_191225.mtl"></a-asset-item>-->
@@ -107,7 +109,7 @@
 
     <!-- offset of scene is +2m; char height is 1.8m-->
     <a-entity id="rig" position="-4 1.8 0">
-      <a-camera id="camera"></a-camera>
+      <a-camera preset='hiro'></a-camera>
     </a-entity>
 
     <!--<a-entity obj-model="obj: #huidig-obj; mtl: #huidig-mtl" scale="1 1 1"></a-entity>-->
