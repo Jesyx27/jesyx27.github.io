@@ -99,20 +99,16 @@
     <button onclick="toggle_model()">Model Weergeven/Verbergen</button>
   </ui>
 
-  <a-scene id="scene" hdr-environment="url: assets/hdris/citrus_orchard_road_puresky_4k.hdr; showBackground: true; showGround: true; groundSize: 1000;">
+  <a-scene id="scene" hdr-environment="url: assets/hdris/citrus_orchard_road_puresky_4k.hdr; showBackground: true; showGround: false; groundSize: 1000">
     <a-assets>
-      <!--<a-asset-item id="huidig-obj" src="assets/models/huidigesituatie/huidige_situatie_191225.obj"></a-asset-item>
-      <a-asset-item id="huidig-mtl" src="assets/models/huidigesituatie/huidige_situatie_191225.mtl"></a-asset-item>-->
       <a-asset-item id="huidig-gltf" src="assets/models/huidigesituatie/huidige_situatie-191225.glb"></a-asset-item>
     </a-assets>
 
-    <!-- offset of scene is +2m; char height is 1.8m
-    <a-entity id="rig" position="-4 1.8 0">
-      <a-camera id="camera"></a-camera>
-    </a-entity>-->
+    <a-entity camera="active: false" look-controls wasd-controls position="0 1.6 0" data-aframe-default-camera></a-entity>
+    <a-entity camera="active: true" look-controls wasd-controls position="0 100 0" data-aframe-default-camera></a-entity>
 
     <!--<a-entity obj-model="obj: #huidig-obj; mtl: #huidig-mtl" scale="1 1 1"></a-entity>-->
-    <a-entity gltf-model="#huidig-gltf" scale="1 1 1" position="4 2 0" rotation="-90 0 0"></a-entity>
+    <a-entity gltf-model="#huidig-gltf" scale="1 1 1" position="4 0 0" rotation="-90 0 0" shadow="receive: true"></a-entity>></a-entity>
     <a-box color="red" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>
   </a-scene>
   
@@ -145,7 +141,7 @@
       setTimeout(() => {
           scene.setAttribute(
               "hdr-environment",
-              `url: ${hdr}; showBackground: true; showGround: true; groundSize: 1000;`
+              `url: ${hdr}; showBackground: true; showGround: false; groundSize: 1000;`
           );
 
           console.log("HDR changed to:", hdr);
