@@ -94,12 +94,13 @@
 </head>
 <body>
   <ui class="ui">
-    <!-- Optionele UI-elementen kunnen hier geplaatst worden -->
-    <button onclick="change_hdri()">Andere Lucht</button>
+    <!-- Optionele UI-elementen kunnen hier geplaatst worden 
+    <button onclick="change_hdri()">Andere Lucht</button>-->
     <button onclick="alter_situation_change()">Oude/Nieuwe Situatie</button>
   </ui>
 
-  <a-scene id="scene" hdr-environment="url: assets/hdris/citrus_orchard_road_puresky_4k.hdr; showBackground: true; showGround: false; groundSize: 1000">
+  <!--hdr-environment="url: assets/hdris/citrus_orchard_road_puresky_4k.hdr; showBackground: true; showGround: false; groundSize: 1000"-->
+  <a-scene id="scene" shadow="type: pcfsoft" hdr-environment="url: assets/hdris/sunflowers_puresky_4k.hdr; showBackground: true; showGround: false; groundSize: 1000">
     <a-assets>
       <a-asset-item id="mesh_huidig" src="assets/models/huidigesituatie/pgc_huidig.glb"></a-asset-item>
       <a-asset-item id="mesh_vloer" src="assets/models/huidigesituatie/pgc_vloer.glb"></a-asset-item>
@@ -115,8 +116,24 @@
 
     </a-assets>
 
+    <a-entity light="type: ambient; intensity: 0.5;"></a-entity>
+    <a-entity id="sun" light="type: directional;
+                    castShadow: true;
+                    intensity: 10;
+                    shadowCameraNear: 1;
+                    shadowCameraFar: 300;
+                    shadowCameraLeft: -100;
+                    shadowCameraRight: 100;
+                    shadowCameraTop: 100;
+                    shadowCameraBottom: -100;
+                    shadowMapHeight: 2048;
+                    shadowMapWidth: 2048;
+              sun-position="azimuth: 50; altitude: 50; distance: 150">
+    </a-entity>
+
+
     <a-entity camera="active: false" look-controls wasd-controls position="0 1.6 0" data-aframe-default-camera></a-entity>
-    <a-entity camera="active: true" look-controls wasd-controls position="0 10 0" data-aframe-default-camera></a-entity>
+    <a-entity camera="active: true" look-controls wasd-controls position="0 40 0" data-aframe-default-camera></a-entity>
 
     <!--<a-entity obj-model="obj: #huidig-obj; mtl: #huidig-mtl" scale="1 1 1"></a-entity>-->
     <a-entity id="huidig" gltf-model="#mesh_huidig" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
@@ -125,15 +142,37 @@
     <a-entity id="n_pv_oranje" gltf-model="#mesh_n_pv_oranje" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
     <a-entity id="n_pv_blauw" gltf-model="#mesh_n_pv_blauw" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
     <a-entity id="n_bravo" gltf-model="#mesh_n_bravo" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
-    <a-entity id="n_bravodek" gltf-model="#mesh_n_bravodek" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
-    <a-entity id="n_cellullosevloer" gltf-model="#mesh_n_cellullosevloer" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
-    <a-entity id="n_pur_istolatie" gltf-model="#mesh_n_pur_istolatie" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
-    <a-entity id="n_vacuumvloer" gltf-model="#mesh_n_vacuumvloer" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
+    <a-entity id="n_bravodek" gltf-model="#mesh_n_bravodek" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="cast: true; receive: true"></a-entity>></a-entity>
+    <a-entity id="n_cellullosevloer" gltf-model="#mesh_n_cellullosevloer" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="cast: true; receive: true"></a-entity>></a-entity>
+    <a-entity id="n_pur_istolatie" gltf-model="#mesh_n_pur_istolatie" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="cast: true; receive: true"></a-entity>></a-entity>
+    <a-entity id="n_vacuumvloer" gltf-model="#mesh_n_vacuumvloer" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="cast: true; receive: true"></a-entity>></a-entity>
     <a-entity id="n_tussenvloer" gltf-model="#mesh_n_tussenvloer" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
+  
   </a-scene>
   
 </body>
 </html>
+<script>
+AFRAME.registerComponent('sun-position', {
+  schema: {
+    azimuth: { type: 'number', default: 45 },   // degrees
+    altitude: { type: 'number', default: 45 },  // degrees
+    distance: { type: 'number', default: 50 }
+  },
+
+  update() {
+    const az = THREE.MathUtils.degToRad(this.data.azimuth);
+    const alt = THREE.MathUtils.degToRad(this.data.altitude);
+    const r = this.data.distance;
+
+    const x = r * Math.cos(alt) * Math.sin(az);
+    const y = r * Math.sin(alt);
+    const z = r * Math.cos(alt) * Math.cos(az);
+
+    this.el.setAttribute('position', { x, y, z });
+  }
+});
+</script>
 <script>
   var oudeSituatie = false;
   var skyboxIndex = 0;
@@ -141,11 +180,11 @@
   var skyboxSuffix = '; showBackground: true; showGround: true; groundSize: 1000';
   var skyboxPrefix = 'url: ';
   var skyboxes = [
+      'assets/hdris/sunflowers_puresky_4k.hdr',
       'assets/hdris/citrus_orchard_road_puresky_4k.hdr',
       'assets/hdris/belfast_sunset_puresky_4k.hdr',
       'assets/hdris/overcast_soil_puresky_4k.hdr',
       'assets/hdris/qwantani_night_puresky_4k.hdr',
-      'assets/hdris/sunflowers_puresky_4k.hdr',
       'assets/hdris/syferfontein_0d_clear_puresky_4k.hdr'
   ];
 
