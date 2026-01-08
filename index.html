@@ -119,21 +119,22 @@
     <a-entity light="type: ambient; intensity: 0.5;"></a-entity>
     <a-entity id="sun" light="type: directional;
                     castShadow: true;
+                    shadowBias: -0.00005;
                     intensity: 5;
                     shadowCameraNear: 1;
-                    shadowCameraFar: 300;
+                    shadowCameraFar: 500;
                     shadowCameraLeft: -100;
                     shadowCameraRight: 100;
                     shadowCameraTop: 100;
                     shadowCameraBottom: -100;
                     shadowMapHeight: 2048;
                     shadowMapWidth: 2048;"
-              sun-position="azimuth: 50; altitude: 50; distance: 150">
+              sun-position="azimuth: 50; altitude: 45; distance: 150">
     </a-entity>
 
 
     <a-entity camera="active: false" look-controls wasd-controls position="0 1.6 0" data-aframe-default-camera></a-entity>
-    <a-entity camera="active: true" look-controls wasd-controls position="0 40 0" data-aframe-default-camera></a-entity>
+    <a-entity camera="active: true" look-controls wasd-controls position="0 25 0" data-aframe-default-camera></a-entity>
 
     <!--<a-entity obj-model="obj: #huidig-obj; mtl: #huidig-mtl" scale="1 1 1"></a-entity>-->
     <a-entity id="huidig" gltf-model="#mesh_huidig" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
