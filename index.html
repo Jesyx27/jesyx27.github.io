@@ -96,12 +96,14 @@
   <ui class="ui">
     <!-- Optionele UI-elementen kunnen hier geplaatst worden -->
     <button onclick="change_hdri()">Andere Lucht</button>
-    <button onclick="toggle_model()">Model Weergeven/Verbergen</button>
+    <button onclick="alter_situation_change()">Oude/Nieuwe Situatie</button>
   </ui>
 
   <a-scene id="scene" hdr-environment="url: assets/hdris/citrus_orchard_road_puresky_4k.hdr; showBackground: true; showGround: false; groundSize: 1000">
     <a-assets>
       <a-asset-item id="mesh_huidig" src="assets/models/huidigesituatie/pgc_huidig.glb"></a-asset-item>
+      <a-asset-item id="mesh_vloer" src="assets/models/huidigesituatie/pgc_vloer.glb"></a-asset-item>
+
       <a-asset-item id="mesh_n_pv_oranje" src="assets/models/pgc_n_pv_oranje.glb"></a-asset-item>
       <a-asset-item id="mesh_n_pv_blauw" src="assets/models/pgc_n_pv_blauw.glb"></a-asset-item>
       <a-asset-item id="mesh_n_bravo" src="assets/models/pgc_n_bravo.glb"></a-asset-item>
@@ -115,7 +117,9 @@
     <a-entity camera="active: true" look-controls wasd-controls position="0 10 0" data-aframe-default-camera></a-entity>
 
     <!--<a-entity obj-model="obj: #huidig-obj; mtl: #huidig-mtl" scale="1 1 1"></a-entity>-->
-    <a-entity gltf-model="#huidig" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
+    <a-entity id="huidig" gltf-model="#mesh_huidig" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
+    <a-entity id="vloer" gltf-model="#mesh_vloer" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
+    
     <a-entity id="n_pv_oranje" gltf-model="#mesh_n_pv_oranje" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
     <a-entity id="n_pv_blauw" gltf-model="#mesh_n_pv_blauw" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
     <a-entity id="n_bravo" gltf-model="#mesh_n_bravo" scale="1 1 1" position="4 0 0" rotation="0 0 0" shadow="receive: true"></a-entity>></a-entity>
@@ -128,6 +132,7 @@
 </body>
 </html>
 <script>
+  var oudeSituatie = false;
   var skyboxIndex = 0;
   var skyboxID = 'hdr-environment';
   var skyboxSuffix = '; showBackground: true; showGround: true; groundSize: 1000';
@@ -161,12 +166,30 @@
       }, 10);
   }
 
-  function toggle_model() {
+  function alter_situation_change() {
+    changeVisibility("n_pv_oranje", oudeSituatie);
+    changeVisibility("n_pv_blauw", oudeSituatie);
+    changeVisibility("n_bravo", oudeSituatie);
+    changeVisibility("n_bravodek", oudeSituatie);
+    changeVisibility("n_cellullosevloer", oudeSituatie);
+    changeVisibility("n_pur_istolatie", oudeSituatie);
+    changeVisibility("n_vacuumvloer", oudeSituatie);
+
+    oudeSituatie = !oudeSituatie
+  }
+
+  function changeVisibility(modelName, visible) {
+    let scene = document.getElementById("scene");
+    model = scene.querySelector("#".concat(modelName));
+    model.setAttribute("visible", visible);
+  }
+
+  function toggle_model(modelName) {
     let scene = document.getElementById("scene");
 
-    let oblisk = scene.querySelector("#oblisk");
-    let currentVisibility = oblisk.getAttribute("visible");
-    oblisk.setAttribute("visible", !currentVisibility);
+    let model = scene.querySelector("#".concat(modelName));
+    let currentVisibility = model.getAttribute("visible");
+    model.setAttribute("visible", !currentVisibility);
   }
   
 
